@@ -5,7 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
-import { GroupsPipe } from '../pages/menu/menu';
+import { GroupsPipe } from '../pipes/group-by-category-pipe';
 import { TabsPage } from '../pages/tabs/tabs';
 import { FirebaseService } from '../providers/firebase-service';
 import { AngularFireModule } from 'angularfire2';
