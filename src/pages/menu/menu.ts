@@ -10,6 +10,7 @@ import { FirebaseListObservable} from 'angularfire2';
 export class MenuPage {
 
   public menuItems: FirebaseListObservable<any>;
+  public branding: any;
 
   constructor(public navCtrl: NavController, private fb: FirebaseService) {
     console.log(fb.getMenuItems());
@@ -17,6 +18,7 @@ export class MenuPage {
 
   ionViewDidLoad() {
     this.menuItems = this.fb.getMenuItems();
+    this.branding = this.fb.getBranding()
   }
 
 }

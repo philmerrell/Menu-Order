@@ -7,8 +7,6 @@ import { FirebaseService } from '../providers/firebase-service';
 // import { TabsPage } from '../pages/tabs/tabs';
 import { MenuPage } from '../pages/menu/menu';
 
-import { AngularFire } from 'angularfire2';
-
 
 @Component({
   templateUrl: 'app.html'
@@ -16,7 +14,7 @@ import { AngularFire } from 'angularfire2';
 export class MyApp {
   rootPage = MenuPage;
 
-  constructor(platform: Platform, af: AngularFire, fb: FirebaseService) {
+  constructor(platform: Platform, fb: FirebaseService) {
 
     fb.setStoreId(this.getUrlParameter("store"));
 
@@ -34,4 +32,5 @@ export class MyApp {
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
   }
+
 }

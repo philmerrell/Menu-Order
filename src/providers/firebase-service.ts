@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 /*
   Generated class for the FirebaseService provider.
@@ -12,7 +12,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 @Injectable()
 export class FirebaseService {
 
-  public branding: any;
+  public branding: FirebaseObjectObservable<any>;
   public hours: any;
   public info: any;
   public menuItems: FirebaseListObservable<any>;
@@ -31,6 +31,12 @@ export class FirebaseService {
   public getMenuItems(): FirebaseListObservable<any> {
     this.menuItems = this.af.database.list('/stores/' + this.storeId + '/menu/items');
     return this.menuItems;
+  }
+
+  public getBranding(): FirebaseObjectObservable<any> {
+    this.branding = this.af.database.object('/stores/' + this.storeId + '/branding');
+    console.log(this.branding);
+    return this.branding;
   }
 
 }
