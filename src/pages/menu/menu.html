@@ -24,9 +24,9 @@
   
   <ion-list>
     <div *ngFor="let category of menuItems | async | groupMenuByCategory">
-      <ion-list-header>{{category.name.name}}</ion-list-header>
-      <ion-item *ngFor="let item of category.items">{{item.name}}</ion-item>
+      <ion-list-header>{{category.name}}</ion-list-header>
+      <ion-item (click)="viewItemDetail(item)" *ngFor="let item of category.items">{{item.name}}</ion-item>
     </div>
-    <!--<div>{{branding | async | json }}</div>-->
+    <!--<pre>{{menuItems | async | json }}</pre>-->
   </ion-list>
 </ion-content>

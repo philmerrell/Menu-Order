@@ -5,7 +5,7 @@ export class GroupsPipe implements PipeTransform {
     if(value) {
       var categories = {};
       value.forEach(function(o) {
-        var category = o.category;
+        var category = o.category.name;
         categories[category] = categories[category] ? categories[category] : { name: category, items: [] };
         categories[category].items.push(o);  
       });

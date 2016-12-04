@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FirebaseService } from '../../providers/firebase-service';
 import { FirebaseListObservable} from 'angularfire2';
+import { MenuItemPage } from '../menu-item/menu-item';
 
 @Component({
   selector: 'page-menu',
@@ -19,6 +20,10 @@ export class MenuPage {
   ionViewDidLoad() {
     this.menuItems = this.fb.getMenuItems();
     this.branding = this.fb.getBranding()
+  }
+
+  viewItemDetail() {
+    this.navCtrl.push(MenuItemPage);
   }
 
 }
