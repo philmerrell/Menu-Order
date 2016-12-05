@@ -5,6 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
+import { MenuItemPage } from '../pages/menu-item/menu-item';
 import { GroupsPipe } from '../pipes/group-by-category-pipe';
 import { TabsPage } from '../pages/tabs/tabs';
 import { FirebaseService } from '../providers/firebase-service';
@@ -27,6 +28,7 @@ export const firebaseConfig = {
     ContactPage,
     HomePage,
     MenuPage,
+    MenuItemPage,
     TabsPage,
     GroupsPipe
   ],
@@ -41,6 +43,7 @@ export const firebaseConfig = {
     ContactPage,
     HomePage,
     MenuPage,
+    MenuItemPage,
     TabsPage
   ],
   providers: [ {provide: ErrorHandler, useClass: IonicErrorHandler}, FirebaseService ]

@@ -7,12 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>menuItem</ion-title>
+    <ion-title>{{item.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <div style="position: relative;">
+    <!--<div style="position: absolute; right: 0; left: 0; padding: 10px; color: #fff; text-shadow: 2px 2px 0 #000;">
+    </div>-->
+    <img src="{{item.image?.url}}" width="100%">
+  </div>
+  <div padding>
+    <h1>{{item.name}}</h1>
+    <p>{{item.description}}</p>
+  </div>
 </ion-content>

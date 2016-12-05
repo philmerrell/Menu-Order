@@ -22,8 +22,8 @@ export class MenuPage {
     this.branding = this.fb.getBranding()
   }
 
-  viewItemDetail() {
-    this.navCtrl.push(MenuItemPage);
+  viewItemDetail(item) {
+    this.navCtrl.push(MenuItemPage, {item: item});
   }
 
 }

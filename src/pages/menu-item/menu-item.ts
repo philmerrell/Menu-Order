@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the MenuItem page.
@@ -13,7 +13,12 @@ import { NavController } from 'ionic-angular';
 })
 export class MenuItemPage {
 
-  constructor(public navCtrl: NavController) {}
+  public item: any;
+
+  constructor(public navCtrl: NavController, params: NavParams) {
+    this.item = params.get("item");
+    console.log(this.item);
+  }
 
   ionViewDidLoad() {
     console.log('Hello MenuItemPage Page');
