@@ -21,6 +21,9 @@
   </div>
   <div padding>
     <h1>{{item.name}}</h1>
+    <div>
+      <span *ngFor="let price of item.prices"><b>{{price.description}}</b> {{price.cost | currency}} </span>
+    </div>
     <p>{{item.description}}</p>
   </div>
 </ion-content>
