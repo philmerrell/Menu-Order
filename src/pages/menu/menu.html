@@ -22,11 +22,9 @@
     <img src="{{(branding | async)?.image.url}}" width="100%">
   </div>
   
-  <ion-list>
-    <div *ngFor="let category of menuItems | async | groupMenuByCategory">
-      <ion-list-header>{{category.name}}</ion-list-header>
+  <ion-list *ngFor="let category of menuItems | async | groupMenuByCategory">
+      <ion-item-divider color="light">{{category.name}}</ion-item-divider>
       <ion-item (click)="viewItemDetail(item)" *ngFor="let item of category.items">{{item.name}}</ion-item>
-    </div>
     <!--<pre>{{menuItems | async | json }}</pre>-->
   </ion-list>
 </ion-content>
