@@ -16,6 +16,7 @@ export class FirebaseService {
   public hours: any;
   public info: any;
   public menuItems: FirebaseListObservable<any>;
+  public locations: FirebaseListObservable<any>;
 
   private storeId: any;
 
@@ -37,6 +38,11 @@ export class FirebaseService {
     this.branding = this.af.database.object('/stores/' + this.storeId + '/branding');
     console.log(this.branding);
     return this.branding;
+  }
+
+  public getLocations(): FirebaseListObservable<any> {
+    this.locations = this.af.database.list('/stores/' + this.storeId + '/locations');
+    return this.locations;
   }
 
 }

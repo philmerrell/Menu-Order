@@ -10,6 +10,8 @@ import { GroupsPipe } from '../pipes/group-by-category-pipe';
 import { TabsPage } from '../pages/tabs/tabs';
 import { FirebaseService } from '../providers/firebase-service';
 import { AngularFireModule } from 'angularfire2';
+import { LocationPopover } from '../pages/menu/location-list';
+
 
 // Must export the config
 export const firebaseConfig = {
@@ -30,6 +32,7 @@ export const firebaseConfig = {
     MenuPage,
     MenuItemPage,
     TabsPage,
+    LocationPopover,
     GroupsPipe
   ],
   imports: [
@@ -44,6 +47,7 @@ export const firebaseConfig = {
     HomePage,
     MenuPage,
     MenuItemPage,
+    LocationPopover,
     TabsPage
   ],
   providers: [ {provide: ErrorHandler, useClass: IonicErrorHandler}, FirebaseService ]

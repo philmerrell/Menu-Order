@@ -6,8 +6,21 @@
 -->
 <ion-header>
 
-  <ion-navbar [color]="(branding | async)?.primaryColor">
+  <ion-navbar>
     <ion-title>Menu</ion-title>
+    <ion-buttons end>
+      <!--<button (click)="presentPopover($event)" ion-button>
+        Location
+      </button>-->
+      <ion-select [(ngModel)]="gaming">
+      <ion-option value="nes">NES</ion-option>
+      <ion-option value="n64">Nintendo64</ion-option>
+      <ion-option value="ps">PlayStation</ion-option>
+      <ion-option value="genesis">Sega Genesis</ion-option>
+      <ion-option value="saturn">Sega Saturn</ion-option>
+      <ion-option value="snes">SNES</ion-option>
+    </ion-select>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -18,6 +31,7 @@
     <div style="position: absolute; right: 0; left: 0; padding: 10px; color: #fff; text-shadow: 2px 2px 0 #000;">
       <h1>{{(branding | async)?.name}}</h1>
       <p>{{(branding | async)?.tagline}}</p>
+      <ion-badge color="secondary">OPEN</ion-badge>
     </div>
     <img src="{{(branding | async)?.image.url}}" width="100%">
   </div>
